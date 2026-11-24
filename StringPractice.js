@@ -3,7 +3,7 @@
 // .padStart(), .padEnd(), .replace(), .replaceAll()
 
 
-const str = "Keshav";
+const Str = "Keshav";
 
 //Str.length
 function len(Str){
@@ -106,4 +106,16 @@ function trim(Str){
 }
 
 
-console.log(trim("    Keshav    "));
+function padStart(Str, len, pad){
+    let res = Str;
+    
+    if(res.length < len){
+            while(res.length !== len){
+            res = pad + res;
+        }
+    }
+
+    return res;
+}
+
+console.log(padStart(Str, 4, "k"));

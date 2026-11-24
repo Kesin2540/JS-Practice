@@ -1,6 +1,6 @@
 //Making user-defined inbuilt String functions
 // To make: .length, .concat, .slice(), .substring(), .trim()
-// .trimStart(), .padStart(), .padEnd(), .replace(), .replaceAll()
+// .padStart(), .padEnd(), .replace(), .replaceAll()
 
 
 const str = "Keshav";
@@ -71,4 +71,39 @@ function slice(Str, start, end = Str.length) {
     return res;
 }
 
-console.log(slice(str, 2));
+//Str.trim()
+function trim(Str){
+    let res = "";
+
+    let start;
+    let end;
+
+    for(let i = 0; i<Str.length; i++){
+        if(Str[i] === ' '){
+            continue;
+        }
+        else{
+            start = i;
+            break;
+        }
+    }
+
+    for(let i = Str.length - 1; i>=0; i--){
+        if(Str[i] === ' '){
+            continue;
+        }
+        else{
+            end = i;
+            break;
+        }
+    }
+
+    for(let i = start; i<=end; i++){
+        res += Str[i];
+    }
+
+    return res;
+}
+
+
+console.log(trim("    Keshav    "));

@@ -99,4 +99,8 @@ function unshift(Arr, val){
     return Arr.length;
 }
 
-console.log(unshift(Arr1, 0), Arr1);
+// delete
+
+function del(Arr, idx){
+    Arr[idx] = undefined;
+}

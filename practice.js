@@ -118,3 +118,18 @@ function concat(...arrs){
     return res;
 }
 
+// arr.flat()
+
+function flat(arrs){
+    let res = [];
+    for(const arr of arrs){
+        for(const val of arr){
+            res.push(val);
+        }
+    }
+
+    return res;
+}
+
+console.log(flat(Arr2));
+

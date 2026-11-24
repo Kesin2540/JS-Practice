@@ -71,4 +71,18 @@ function push(Arr, val){
     return Arr.length;
 }
 
-console.log(push(Arr1, 3), Arr1)
+//Arr.shift()
+
+function shift(Arr){
+    let shiftVal = Arr[0];
+
+    for(var i = 1; i<Arr.length; i++){
+        Arr[i - 1] = Arr[i];
+    }
+
+    Arr.length -= 1;
+
+    return shiftVal
+}
+
+console.log(shift(Arr1), Arr1);

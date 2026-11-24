@@ -32,3 +32,9 @@ function str(Arr){
     return str;
 }
 
+//Arr.at()
+
+function at(Arr, idx){
+    return Arr[idx];
+}
+

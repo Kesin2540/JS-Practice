@@ -3,7 +3,7 @@
 //.flat(), .slice(), .splice()
 
 const Arr1 = [1, 2, 3, 4];
-const Arr2 = ["K", "E", "S", "H", "A", "V"];
+const Arr2 = [[1,2],[3,4],[5,6],[7,8]];
 
 //Arr.length
 
@@ -104,3 +104,19 @@ function unshift(Arr, val){
 function del(Arr, idx){
     Arr[idx] = undefined;
 }
+
+//Arr.concat()
+
+function concat(...arrs){
+    let res = [];
+    for(const arr of arrs){
+        if(!arr)
+        for(const val of arr){
+            res.push(val);
+        }
+    }
+
+    return res;
+}
+
+console.log(concat(Arr1, Arr1, Arr1));

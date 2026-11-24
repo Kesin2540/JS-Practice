@@ -54,4 +54,12 @@ function join(Arr, sep){
     return str;
 }
 
-console.log(join(Arr1, " * "));
+
+//Arr.pop()
+
+function pop(Arr){
+    let res = Arr[Arr.length - 1];
+    Arr.length -= 1;
+    return res;
+}
+console.log(pop(Arr1), Arr1);

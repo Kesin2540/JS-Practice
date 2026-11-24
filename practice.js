@@ -62,4 +62,13 @@ function pop(Arr){
     Arr.length -= 1;
     return res;
 }
-console.log(pop(Arr1), Arr1);
+
+//Arr.push()
+
+function push(Arr, val){
+    Arr.length += 1;
+    Arr[Arr.length - 1] = val;
+    return Arr.length;
+}
+
+console.log(push(Arr1, 3), Arr1)

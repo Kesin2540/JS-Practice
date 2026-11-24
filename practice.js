@@ -85,4 +85,18 @@ function shift(Arr){
     return shiftVal
 }
 
-console.log(shift(Arr1), Arr1);
+//Arr.unshift()
+
+function unshift(Arr, val){
+    Arr.length += 1;
+
+    for(var i = Arr.length - 1; i>=0; i--){
+        Arr[i] = Arr[i-1];
+    }
+
+    Arr[0] = val;
+
+    return Arr.length;
+}
+
+console.log(unshift(Arr1, 0), Arr1);

@@ -118,4 +118,16 @@ function padStart(Str, len, pad){
     return res;
 }
 
-console.log(padStart(Str, 4, "k"));
+function padEnd(Str, len, pad){
+    let res = Str;
+    
+    if(res.length < len){
+            while(res.length !== len){
+            res = res + pad;
+        }
+    }
+
+    return res;
+}
+
+console.log(padEnd(Str, 10, "k"));

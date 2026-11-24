@@ -143,6 +143,60 @@ function slice(Arr, start, end = Arr.length){
     return res;
 }
 
-console.log(slice(Arr1, 1, 3));
+// Arr.splice()
 
+function splice(Arr, start, removeVal, ...vals){
+    let res = [];
+    for(let i = start; i < start + removeVal; i++){
+        res.push(Arr[i]);
+    }
+
+    if(vals.length === 0){
+        for(let i = start; i<start + removeVal; i++){
+            if(Arr[i+removeVal]  !== undefined){
+                Arr[i] = Arr[i + removeVal]
+            }
+        }
+
+        Arr.length -= removeVal;
+    }
+    else{
+        if(vals.length === removeVal){
+            for(let i = 0; i < vals.length; i++){
+                Arr[i+start] = vals[i];
+            }
+        }
+        else if(vals.length > removeVal){
+                let diff = vals.length - removeVal;
+
+                for (let i = Arr.length - 1; i >= start + removeVal; i--) {
+                    Arr[i + diff] = Arr[i];
+                }
+
+                for (let i = 0; i < vals.length; i++) {
+                    Arr[start + i] = vals[i];
+                }
+
+                Arr.length += diff;
+            }
+            else if (vals.length < removeVal) {
+                let diff = removeVal - vals.length;
+
+                for (let i = start + vals.length; i < Arr.length - diff; i++) {
+                    Arr[i] = Arr[i + diff];
+                }
+
+                Arr.length -= diff;
+
+                for (let i = 0; i < vals.length; i++) {
+                    Arr[start + i] = vals[i];
+                }
+            }
+        }
+        
+
+    return res;
+}
+
+console.log(splice(Arr1, 1, 2, 5), Arr1);
 

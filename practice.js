@@ -131,5 +131,18 @@ function flat(arrs){
     return res;
 }
 
-console.log(flat(Arr2));
+// Arr.slice()
+
+function slice(Arr, start, end = Arr.length){
+    let res = [];
+
+    for(var i = start; i<end; i++){
+        res.push(Arr[i]);
+    }
+
+    return res;
+}
+
+console.log(slice(Arr1, 1, 3));
+
 

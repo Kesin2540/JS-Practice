@@ -38,3 +38,20 @@ function at(Arr, idx){
     return Arr[idx];
 }
 
+//Arr.join()
+
+function join(Arr, sep){
+    let str = "";
+    let first = true
+    for(i of Arr){
+        if(!first){
+            str += sep;
+        }
+        str += i;
+        first = false;
+    }
+
+    return str;
+}
+
+console.log(join(Arr1, " * "));

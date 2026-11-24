@@ -110,7 +110,6 @@ function del(Arr, idx){
 function concat(...arrs){
     let res = [];
     for(const arr of arrs){
-        if(!arr)
         for(const val of arr){
             res.push(val);
         }
@@ -119,4 +118,3 @@ function concat(...arrs){
     return res;
 }
 
-console.log(concat(Arr1, Arr1, Arr1));

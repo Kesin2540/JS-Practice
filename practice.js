@@ -15,3 +15,20 @@ function len(Arr){
 
     return cnt;
 }
+
+//Arr.toString()
+
+function str(Arr){
+    let str = "";
+    let first = true
+    for(i of Arr){
+        if(!first){
+            str += ",";
+        }
+        str += i;
+        first = false;
+    }
+
+    return str;
+}
+

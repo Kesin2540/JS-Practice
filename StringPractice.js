@@ -1,5 +1,5 @@
 //Making user-defined inbuilt String functions
-// To make: .length, .concat, .slice(), .substring(), .toUpperCase(), .toLowerCase(), .trim()
+// To make: .length, .concat, .slice(), .substring(), .trim()
 // .trimStart(), .padStart(), .padEnd(), .replace(), .replaceAll()
 
 
@@ -36,4 +36,39 @@ function substring(Str, start, end = Str.length){
     return res;
 }
 
-console.log(substring(str, 2));
+function slice(Str, start, end = Str.length) {
+    let res = "";
+    let len = Str.length;
+
+    if (start < 0) {
+        start = len + start;
+
+        if (start < 0) {
+            start = 0;
+        }
+    }
+
+    if (end < 0) {
+        end = len + end;
+
+        if (end < 0) {
+            end = 0;
+        }
+    }
+
+    if (start > len) {
+        start = len;
+    }
+
+    if (end > len) {
+        end = len;
+    }
+
+    for (let i = start; i < end; i++) {
+        res += Str[i];
+    }
+
+    return res;
+}
+
+console.log(slice(str, 2));

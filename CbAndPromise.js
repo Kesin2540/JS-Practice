@@ -25,7 +25,40 @@ function CbFunc(num){
 }
 
 
-Func(CbFunc, (x) => {
-    console.log(x);
-});
+// Func(CbFunc, (x) => {
+//     console.log(x);
+// });
 
+//Making Prom as a promise example
+
+function Prom(CbFunc, printFunc){
+    return new Promise((resolve, reject) => {
+        try{
+            for(let i = 0; i<21; i++){
+                if(i === 15){
+                    setTimeout(() => {
+                        printFunc(CbFunc(i));
+                    } , 5000);
+                }
+                else{
+                    printFunc(i);
+                }
+            }
+
+            resolve("Executed.")
+        }
+        catch(error){
+            reject(error);
+        }
+    })
+}
+
+Prom(CbFunc, (x) => {
+    console.log(x);
+})
+.then((message) => {
+    console.log(message);
+})
+.catch((error) => {
+    console.log(error);
+})

@@ -1,6 +1,6 @@
 //Making user-defined inbuilt String functions
 // To make: .length, .concat, .slice(), .substring(), .trim()
-// .padStart(), .padEnd(), .replace(), .replaceAll()
+// .padStart(), .padEnd(), .toUpperCase(), .toLowerCase()
 
 
 const Str = "Keshav";
@@ -130,4 +130,32 @@ function padEnd(Str, len, pad){
     return res;
 }
 
-console.log(padEnd(Str, 10, "k"));
+function toUpperCase(Str){
+    let res = "";
+    for(let i = 0; i<Str.length; i++){
+        if(Str.charCodeAt(i) >= 97 && Str.charCodeAt(i)<=122){
+            res += String.fromCharCode(Str.charCodeAt(i) - 32);
+        }
+        else{
+            res += Str[i];
+        }
+    }
+
+    return res;
+}
+
+function toLowerCase(Str){
+    let res = "";
+    for(let i = 0; i<Str.length; i++){
+        if(Str.charCodeAt(i) >= 65 && Str.charCodeAt(i) <= 90){
+            res += String.fromCharCode(Str.charCodeAt(i) + 32);
+        }
+        else{
+            res += Str[i]; 
+        }
+    }
+
+    return res;
+}
+
+console.log(toLowerCase(Str));

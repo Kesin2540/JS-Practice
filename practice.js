@@ -168,7 +168,7 @@ function splice(Arr, start, removeVal, ...vals){
         }
         else if(vals.length > removeVal){
                 let diff = vals.length - removeVal;
-
+                
                 for (let i = Arr.length - 1; i >= start + removeVal; i--) {
                     Arr[i + diff] = Arr[i];
                 }
@@ -177,26 +177,25 @@ function splice(Arr, start, removeVal, ...vals){
                     Arr[start + i] = vals[i];
                 }
 
-                Arr.length += diff;
+                
             }
-            else if (vals.length < removeVal) {
-                let diff = removeVal - vals.length;
+        else if (vals.length < removeVal) {
+            let diff = removeVal - vals.length;
 
-                for (let i = start + vals.length; i < Arr.length - diff; i++) {
-                    Arr[i] = Arr[i + diff];
-                }
+            for (let i = start + vals.length; i < Arr.length - diff; i++) {
+                Arr[i] = Arr[i + diff];
+            }
 
-                Arr.length -= diff;
+            Arr.length -= diff;
 
-                for (let i = 0; i < vals.length; i++) {
-                    Arr[start + i] = vals[i];
-                }
+            for (let i = 0; i < vals.length; i++) {
+                Arr[start + i] = vals[i];
             }
         }
+    }
         
 
     return res;
 }
 
-console.log(splice(Arr1, 1, 2, 5), Arr1);
-
+console.log(splice(Arr1, 2, 1, 5, 6, 7, 8), Arr1);

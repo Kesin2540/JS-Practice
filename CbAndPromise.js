@@ -3,7 +3,6 @@
 //Making Func as callback example
 
 function Func(CbFunc, printFunc){
-    let res;
     for(let i = 0; i<21; i++){
         if(i === 15){
            printFunc(CbFunc(i));
@@ -38,6 +37,7 @@ function Prom(CbFunc, printFunc){
                 if(i === 15){
                     setTimeout(() => {
                         printFunc(CbFunc(i));
+                        resolve("Executed.");
                     } , 5000);
                 }
                 else{
@@ -45,7 +45,6 @@ function Prom(CbFunc, printFunc){
                 }
             }
 
-            resolve("Executed.")
         }
         catch(error){
             reject(error);
@@ -53,12 +52,39 @@ function Prom(CbFunc, printFunc){
     })
 }
 
-Prom(CbFunc, (x) => {
+// Prom(CbFunc, (x) => {
+//     console.log(x);
+// })
+// .then((message) => {
+//     console.log(message);
+// })
+// .catch((error) => {
+//     console.log(error);
+// })
+// .finally(() => {
+//     console.log("Factorial Done");
+// })
+
+
+function delay(t){
+    return new Promise((resolve) => {
+        setTimeout(resolve, t);
+    });
+}
+
+async function AFunc(CbFunc, printFunc) {
+    for(let i = 0; i<21; i++){
+        if(i === 15){
+            await delay(3000); 
+            printFunc(CbFunc(i));
+        }
+        else{
+            printFunc(i);
+        }
+    }
+
+}
+
+AFunc(CbFunc, (x) => {
     console.log(x);
-})
-.then((message) => {
-    console.log(message);
-})
-.catch((error) => {
-    console.log(error);
-})
+});

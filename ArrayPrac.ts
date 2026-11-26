@@ -42,4 +42,10 @@ function join(Arr : number[], sep : string) : string{
     return str;
 }
 
+function pop(Arr : number[]) : number{
+    let res : number = Arr[Arr.length - 1];
+    Arr.length -= 1;
+    return res;
+}
+
 export {};

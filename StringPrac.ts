@@ -111,5 +111,16 @@ function padStart(Str : string, len : number, pad : string) : string{
     return res;
 }
 
+function padEnd(Str : string, len : number, pad : string) : string{
+    let res : string = Str;
+    
+    if(res.length < len){
+            while(res.length !== len){
+            res = res + pad;
+        }
+    }
+
+    return res;
+}
 
 export{};

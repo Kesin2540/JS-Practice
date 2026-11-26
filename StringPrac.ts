@@ -18,4 +18,15 @@ function concat(...strs : string[]) : string{
     return res;
 }
 
+function substring(Str : string, start : number, end : number= Str.length) : string{
+    let res : string = "";
 
+    for(let i = start; i<end; i++){
+        res += Str[i];
+    }
+
+    return res;
+}
+
+
+export{};

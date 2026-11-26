@@ -10,4 +10,17 @@ function len(Arr : number[]) : number{
     return cnt;
 }
 
+function str(Arr : number[]) : String{
+    let str : string = "";
+    let first :boolean = true
+    for(let i of Arr){
+        if(!first){
+            str += ",";
+        }
+        str += i;
+        first = false;
+    }
+
+    return str;
+}
 export {};

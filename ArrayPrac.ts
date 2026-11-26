@@ -48,4 +48,9 @@ function pop(Arr : number[]) : number{
     return res;
 }
 
+function push(Arr : number[], val : number) : number{
+    Arr.length += 1;
+    Arr[Arr.length - 1] = val;
+    return Arr.length;
+}
 export {};

@@ -28,4 +28,18 @@ function at(Arr : number[], idx : number) : number{
     return Arr[idx];
 }
 
+function join(Arr : number[], sep : string) : string{
+    let str :string = "";
+    let first : boolean = true
+    for(let i of Arr){
+        if(!first){
+            str += sep;
+        }
+        str += i;
+        first = false;
+    }
+
+    return str;
+}
+
 export {};

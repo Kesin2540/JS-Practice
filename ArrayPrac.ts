@@ -53,4 +53,16 @@ function push(Arr : number[], val : number) : number{
     Arr[Arr.length - 1] = val;
     return Arr.length;
 }
+
+function shift(Arr : number[]) : number{
+    let shiftVal : number = Arr[0];
+
+    for(let i = 1; i<Arr.length; i++){
+        Arr[i - 1] = Arr[i];
+    }
+
+    Arr.length -= 1;
+
+    return shiftVal
+}
 export {};

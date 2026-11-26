@@ -103,4 +103,14 @@ function flat(arrs : number[][]) : number[]{
 
     return res;
 }
+
+function slice(Arr : number[], start : number, end : number = Arr.length) : number[]{
+    let res : number[] = [];
+
+    for(let i = start; i<end; i++){
+        res.push(Arr[i]);
+    }
+
+    return res;
+}
 export {};

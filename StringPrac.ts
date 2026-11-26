@@ -9,4 +9,13 @@ function len(Str : string) : number{
     return cnt;
 }
 
+function concat(...strs : string[]) : string{
+    let res = "";
+    for(const str of strs){
+        res += str;
+    }
+
+    return res;
+}
+
 

@@ -81,4 +81,16 @@ function unshift(Arr : number[], val : number) : number{
 function del(Arr : (number | undefined)[] , idx : number){
     Arr[idx] = undefined;
 }
+
+function concat(...arrs : number[][]) : number []{
+    let res : number[] = [];
+    for(let arr of arrs){
+        for(const val of arr){
+            res.push(val);
+        }
+    }
+
+    return res;
+}
+
 export {};

@@ -99,5 +99,17 @@ function trim(Str : string) : string{
     return res;
 }
 
+function padStart(Str : string, len : number, pad : string) : string{
+    let res : string = Str;
+    
+    if(res.length < len){
+            while(res.length !== len){
+            res = pad + res;
+        }
+    }
+
+    return res;
+}
+
 
 export{};

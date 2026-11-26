@@ -77,4 +77,8 @@ function unshift(Arr : number[], val : number) : number{
 
     return Arr.length;
 }
+
+function del(Arr : (number | undefined)[] , idx : number){
+    Arr[idx] = undefined;
+}
 export {};

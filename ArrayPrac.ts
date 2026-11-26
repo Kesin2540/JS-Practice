@@ -23,4 +23,9 @@ function str(Arr : number[]) : String{
 
     return str;
 }
+
+function at(Arr : number[], idx : number) : number{
+    return Arr[idx];
+}
+
 export {};

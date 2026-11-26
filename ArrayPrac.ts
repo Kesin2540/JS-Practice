@@ -93,4 +93,14 @@ function concat(...arrs : number[][]) : number []{
     return res;
 }
 
+function flat(arrs : number[][]) : number[]{
+    let res : number[] = [];
+    for(const arr of arrs){
+        for(const val of arr){
+            res.push(val);
+        }
+    }
+
+    return res;
+}
 export {};

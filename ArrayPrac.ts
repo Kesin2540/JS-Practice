@@ -65,4 +65,16 @@ function shift(Arr : number[]) : number{
 
     return shiftVal
 }
+
+function unshift(Arr : number[], val : number) : number{
+    Arr.length += 1;
+
+    for(let i = Arr.length - 1; i>=0; i--){
+        Arr[i] = Arr[i-1];
+    }
+
+    Arr[0] = val;
+
+    return Arr.length;
+}
 export {};

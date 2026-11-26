@@ -123,4 +123,17 @@ function padEnd(Str : string, len : number, pad : string) : string{
     return res;
 }
 
+function toUpperCase(Str : string) : string{
+    let res : string = "";
+    for(let i = 0; i<Str.length; i++){
+        if(Str.charCodeAt(i) >= 97 && Str.charCodeAt(i)<=122){
+            res += String.fromCharCode(Str.charCodeAt(i) - 32);
+        }
+        else{
+            res += Str[i];
+        }
+    }
+
+    return res;
+}
 export{};

@@ -136,4 +136,19 @@ function toUpperCase(Str : string) : string{
 
     return res;
 }
+
+function toLowerCase(Str : string) : string{
+    let res :string = "";
+    for(let i = 0; i<Str.length; i++){
+        if(Str.charCodeAt(i) >= 65 && Str.charCodeAt(i) <= 90){
+            res += String.fromCharCode(Str.charCodeAt(i) + 32);
+        }
+        else{
+            res += Str[i]; 
+        }
+    }
+
+    return res;
+}
+
 export{};
